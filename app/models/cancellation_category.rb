@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: cancellation_categories
+#
+#  id              :integer          not null, primary key
+#  name            :string(120)      not null
+#  active          :boolean          default(TRUE), not null
+#  allow_message   :boolean          default(FALSE), not null
+#  require_message :boolean          default(FALSE), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 # Encoding: utf-8
 
 # Copyright (c) 2014-2015, Richard Buggy <rich@buggy.id.au>

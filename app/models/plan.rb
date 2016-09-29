@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: plans
+#
+#  id                    :integer          not null, primary key
+#  stripe_id             :string(80)
+#  name                  :string(80)       not null
+#  statement_description :string(150)
+#  active                :boolean          default(TRUE), not null
+#  public                :boolean          default(TRUE), not null
+#  paused_plan_id        :integer
+#  currency              :string(3)        default("USD"), not null
+#  interval_count        :integer          default(1), not null
+#  interval              :string(5)        default("month"), not null
+#  amount                :integer          default(0), not null
+#  trial_period_days     :integer          default(30), not null
+#  max_users             :integer          default(1), not null
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  allow_hostname        :boolean          default(FALSE), not null
+#  allow_subdomain       :boolean          default(FALSE), not null
+#  label                 :string(30)
+#  allow_custom_path     :boolean          default(FALSE), not null
+#  require_card_upfront  :boolean          default(FALSE), not null
+#
+
 # Encoding: utf-8
 
 # Copyright (c) 2014-2015, Richard Buggy <rich@buggy.id.au>

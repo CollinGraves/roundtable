@@ -60,6 +60,8 @@ gem 'puma'
 # Multi LANG
 gem 'i18n', '~> 0.7.0'
 
+gem 'annotate'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end

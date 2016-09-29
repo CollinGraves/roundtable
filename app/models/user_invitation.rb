@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: user_invitations
+#
+#  id          :integer          not null, primary key
+#  account_id  :integer
+#  first_name  :string(60)
+#  last_name   :string(60)
+#  email       :string(60)       not null
+#  invite_code :string(36)       not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 # Encoding: utf-8
 
 # Copyright (c) 2014-2015, Richard Buggy <rich@buggy.id.au>

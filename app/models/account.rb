@@ -1,3 +1,37 @@
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id                       :integer          not null, primary key
+#  company_name             :string(255)      not null
+#  email                    :string(255)      not null
+#  plan_id                  :integer          not null
+#  paused_plan_id           :integer
+#  active                   :boolean          default(TRUE), not null
+#  address_line1            :string(120)
+#  address_line2            :string(120)
+#  address_city             :string(120)
+#  address_zip              :string(20)
+#  address_state            :string(60)
+#  address_country          :string(2)
+#  card_token               :string(60)
+#  stripe_customer_id       :string(60)
+#  stripe_subscription_id   :string(60)
+#  cancellation_message     :string
+#  cancelled_at             :datetime
+#  expires_at               :datetime
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  hostname                 :string(255)
+#  subdomain                :string(64)
+#  custom_path              :string(60)
+#  card_brand               :string(25)
+#  card_last4               :string(4)
+#  card_exp                 :string(7)
+#  cancellation_category_id :integer
+#  cancellation_reason_id   :integer
+#
+
 # Encoding: utf-8
 
 # Copyright (c) 2014-2015, Richard Buggy <rich@buggy.id.au>

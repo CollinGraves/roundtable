@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: invoices
+#
+#  id                :integer          not null, primary key
+#  inv_number        :integer          not null
+#  account_id        :integer          not null
+#  stripe_invoice_id :string(100)      not null
+#  invoiced_at       :datetime         not null
+#  paid_at           :datetime
+#  total_amount      :decimal(10, 2)   not null
+#  download_url      :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 # Encoding: utf-8
 
 # Copyright (c) 2014-2015, Richard Buggy <rich@buggy.id.au>

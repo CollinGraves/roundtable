@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: user_permissions
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer          not null
+#  account_id    :integer          not null
+#  account_admin :boolean          default(FALSE), not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 # Encoding: utf-8
 
 # Copyright (c) 2014-2015, Richard Buggy <rich@buggy.id.au>
