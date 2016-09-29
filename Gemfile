@@ -62,6 +62,8 @@ gem 'i18n', '~> 0.7.0'
 
 gem 'annotate'
 
+gem 'sneakers'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
