@@ -1,0 +1,74 @@
+<%
+   content_for(:page_title, "Eventi - #{@account}")
+   content_for(:page_heading, 'Eventi')
+%>
+
+<div class="row">
+  <div class="col s12 m3 l2">
+    <div class="collection z-depth-1">
+      <%= link_to t('header.account'), admin_account_path(@account), class: 'active collection-item' %>
+      <% if can?(:users, @account) %>
+          <%= link_to t('header.users'), admin_account_users_path(@account), class: 'collection-item' %>
+      <% end %>
+      <% if can?(:index, @account) %>
+          <%= link_to t('header.new_invitation'), admin_account_user_invitations_path(@account), class: 'collection-item' %>
+      <% end %>
+      <% if can?(:invoices, @account) %>
+          <%= link_to t('header.invoices'), admin_account_invoices_path(@account), class: 'collection-item' %>
+      <% end %>
+      <% if can?(:events, @account) %>
+          <%= link_to t('header.events'), admin_account_events_path(@account), class: 'collection-item' %>
+      <% end %>
+      <% if can? :edit, @account %>
+          <%= link_to t('header.edit_account'), edit_admin_account_path(@account), class: 'collection-item' %>
+      <% end %>
+      <% if @account.status == :active %>
+          <% if can? :destroy, @account %>
+              <%= link_to t('header.delete_account'), admin_account_cancel_path(@account), class: 'collection-item' %>
+          <% end %>
+      <% end %>
+      <% if @account.status == :cancelled || @account.status == :cancel_pending %>
+          <% if can? :edit, @account %>
+              <%= link_to t('header.active_account'), admin_account_restore_path(@account), class: 'collection-item' %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col s12 m9 l10">
+    <% if @app_events.empty? then %>
+        <div class="btn btn-large red">
+          <%= t('message.no_events') %>
+        </div>
+    <% else %>
+        <table class="responsive-table highlight">
+          <thead>
+          <tr>
+            <th>Data</th>
+            <th>Account</th>
+            <th>Utente</th>
+            <th>Esito</th>
+            <th>Messaggio</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @app_events.each do |app_event| %>
+              <tr>
+                <td><%= app_event.created_at %></td>
+                <td>
+                  <% if app_event.account != nil %><%= link_to app_event.account, admin_account_path(app_event.account) %>
+                  <% end %></td>
+                <td>
+                  <% if app_event.user != nil %><%= link_to app_event.user, admin_user_path(app_event.user) %>
+                  <% end %></td>
+                <td><%= log_level(app_event) %></td>
+                <td><%= app_event.message %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= paginate @app_events %>
+    <% end %>
+  </div>
+
+</div>

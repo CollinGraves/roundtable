@@ -1,0 +1,7 @@
+<%
+content_for(:page_title, t('header.new_account'))
+content_for(:page_heading, t('header.new_account'))
+@nav_item = t('header.accounts')
+%>
+
+<%= render 'form', account: @account %>

@@ -1,0 +1,45 @@
+<%
+  content_for(:page_title, t('header.accounts'))
+  content_for(:page_heading, t('header.accounts'))
+%>
+
+<div class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <% if can? :new, Account %><%= link_to ('<i class="material-icons right">person_add</i>').html_safe+t('header.new_account'), new_admin_account_path, class: 'btn btn-large green' %>
+    <% end %>
+  </div>
+</div>
+
+<% if @accounts.empty? %>
+    <div class="btn btn-large red valign">
+      <%= t('message.no_accounts') %>
+    </div>
+<% else %>
+    <table class="responsive-table highlight">
+      <thead>
+      <tr>
+        <th><%= t('general.company') %></th>
+        <th><%= t('general.active') %></th>
+        <th><%= t('general.plan') %></th>
+        <th><%= t('general.city') %></th>
+        <th><%= t('general.zip_code') %></th>
+        <th><%= t('general.country') %></th>
+        <th><%= t('general.nation') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @accounts.each do |account| %>
+          <tr>
+            <td><%= link_to_if can?(:show, account), account.company_name, admin_account_path(account) %></td>
+            <td><%= account_status(account) %></td>
+            <td><%= link_to_if can?(:show, account.plan), account.plan, admin_plan_path(account.plan) %></td>
+            <td><%= account.address_city %></td>
+            <td><%= account.address_zip %></td>
+            <td><%= account.address_state %></td>
+            <td><%= account.address_country %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= paginate @accounts %>
+<% end %>

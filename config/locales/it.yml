@@ -1,0 +1,32 @@
+it:
+  general:
+    save: "Salva"
+    discard: "Annulla"
+
+  message:
+    no_account: "Nessun Account Presente"
+
+  header:
+    account: "Account"
+    accounts: "Accounts"
+    user: "User"
+    users: "Users"
+  admin:
+    accounts:
+      form:
+        company_name: 'Nome Azienda'
+        plan: "Piano"
+        paused_plan_id: "Piano in pausa"
+        expires_at: "Scadenza"
+        email: "Email"
+        address_line1: "Indirizzo Primario"
+        address_line2: "Indirizzo Secondario"
+        address_city: "Città"
+        address_zip: "CAP"
+        address_state: "Provincia"
+        address_country: "Stato"
+        custom_path: "Indirizzo web personalizzato"
+        hostname: "Host personalizzato"
+        subdomain: "Sottodominio personalizzato"
+        active: "Attivo"
+

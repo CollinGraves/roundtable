@@ -1,0 +1,91 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+
+  general:
+    general: "General Info"
+    address: "Address Info"
+    host: "Host Info"
+
+    save: "Save"
+    discard: "Delete"
+    company: "Company"
+    company_name: "Company Name"
+    active: "Active"
+    plan: "Plan"
+    city: "City"
+    zip_code: "ZIP Code"
+    country: "Region"
+    nation: "Nation"
+    email: "Email"
+    plan: "plan"
+    paused_plan_id: "Paused Plan"
+    expires_at: "Expires at"
+    status: "Status"
+    card_token: "Card Token"
+    disable: "Disable"
+    admin_user: "Admin User"
+
+    account_info: "ACCOUNT INFORMATION"
+    account_delete: "ACCOUNT DELETE"
+    delete_category: "Delete Category"
+    delete_motivation: "Delete Motivation"
+    delete_message: "Delete Message"
+    delete_date: "Delete Date"
+
+  message:
+    no_accounts: "No Accounts"
+    no_users: "No Users"
+    no_events: "No Events"
+
+  header:
+    account: "Account"
+    accounts: "Accounts"
+    new_account: "New Account"
+    user: "User"
+    users: "Users"
+    new_user: "New User"
+    invitation: "Invitation"
+    invitations: "invitations"
+    new_invitation: "New Invitation"
+    invoce: "Invoice"
+    invoices: "Invoices"
+    new_invoice: "New Invoice"
+    event: "Event"
+    events: "Events"
+    new_event: "New Event"
+    edit_account: "Edit Account"
+    delete_account: "Delete Account"
+    active_account: "Active Account"
+
+  address:
+    address_line1: "Address Line One"
+    address_line2: "Address Line Two"
+    address_city: "City"
+    address_zip: "Zip Code"
+    address_state: "Country"
+    address_country: "State"
+
+  host:
+    custom_path: "Custom Path"
+    hostname: "Custom Host"
+    subdomain: "Custom Subdomain"
